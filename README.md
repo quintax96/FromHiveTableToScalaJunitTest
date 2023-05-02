@@ -38,3 +38,8 @@ This project aims to read a hive table from a file (.txt) and create a text file
 1. it is possible to add more files for different tables and the output will contain all the dataframes created.
 2. it does not accept all datatypes yet
 3. do not insert more than 22 fields for one table (Scala dataframe do not accept more than 22 columns)
+
+
+## Did you like it ?! PayPal me ! 💰
+
+[![Donate with PayPal](https://github.com/quintax96/FromHiveTableToScalaJunitTest/blob/main/images/paypal-donate-button.png?raw=true)](https://paypal.me/quintax96)
