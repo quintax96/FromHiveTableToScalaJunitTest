@@ -4,7 +4,7 @@ This project aims to read a hive table from a file (.txt) and create a text file
 
 ## Execution
 
-1. Download fromHiveTableToScalaDataframe.exe from [FromHiveTableToScalaJunitTest/bin/fromHiveTableToScalaDataframe.exe](https://github.com/quintax96/FromHiveTableToScalaJunitTest/blob/main/bin/fromHiveTableToScalaDataframe.exe)
+1. Download fromHiveTableToScalaDataframe.exe from [FromHiveTableToScalaJunitTest/bin/fromHiveTableToScalaDataframe.exe](https://github.com/quintax96/FromHiveTableToScalaJunitTest/blob/main/bin/fromHiveTableToScalaDataframe.exe) or scroll to the bottom of this page.
 2. create a txt file with
     1. table name
     2. a list[("field","dataType")]
