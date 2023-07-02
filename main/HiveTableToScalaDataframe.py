@@ -15,8 +15,8 @@ class HiveTableToScalaDataframe:
                 # extract the table name and list of types
                 tableName = lines[0]
                 lines.pop(0)
-                listaTipi = eval(lines[0])
-                lines.pop(0)
+                # listaTipi = eval(lines[0])
+                # lines.pop(0)
                 # remove unnecessary lines
                 lastLine = len(lines) - 1
                 lines.pop(lastLine)
@@ -47,14 +47,23 @@ class HiveTableToScalaDataframe:
                 s = ""
                 y = 0
 
-                # build up a string of values for the current row
+                #build output result
                 for j in valori:
                     # if the value is a string, surround it with double quotes
-                    if listaTipi[y][1] == "string" and len(listaTipi) == len(campi):
-                        s = s + '"' + j.strip() + '",\t'
-                    else:
+                    if any(not(c.isalpha()) for c in j.strip()) and j.strip().count('-') <= 1 and j.strip().count(' ') == 0 and not(j.strip().isnumeric()) or (j.strip()[0] != '0' and j.strip().isnumeric()):
                         s = s + j.strip() + ",\t"
+                    else:
+                        s = s + '"' + j.strip() + '",\t'
                     y = y + 1
+
+                # build up a string of values for the current row
+                # for j in valori:
+                #     # if the value is a string, surround it with double quotes
+                #     if listaTipi[y][1] == "string" and len(listaTipi) == len(campi):
+                #         s = s + '"' + j.strip() + '",\t'
+                #     else:
+                #         s = s + j.strip() + ",\t"
+                #     y = y + 1
 
                 # add the row values to the Scala code
                 scala_code = scala_code + s.rstrip(",\t")
